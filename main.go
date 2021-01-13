@@ -81,6 +81,14 @@ func main() {
 				webColoursDisabled = true
 			case "triple_hex":
 				setTripleHexDisabled(true)
+      case "latex_rgb":
+        latexRGBDisabled = true
+      // case "latex_gray":
+      //   latexGrayDisabled = true
+      // case "latex_cmyk":
+      //   latexCMYKDisabled = true
+      // case "latex_hex":
+      //   latexHexDisabled = true
 			default:
 				fmt.Fprintf(os.Stderr, "Unknown argument to flag -dp: %s", pattern)
 			}
@@ -93,6 +101,10 @@ func main() {
 		hslaDisabled = true
 		webColoursDisabled = true
 		setTripleHexDisabled(true)
+    latexRGBDisabled = true
+    // latexGrayDisabled = true
+    // latexCMYKDisabled = true
+    // latexHexDisabled = true
 		for _, pattern := range strings.Split(*enabledPatterns, ",") {
 			if len(pattern) == 0 {
 				continue
@@ -113,6 +125,14 @@ func main() {
 				webColoursDisabled = false
 			case "triple_hex":
 				setTripleHexDisabled(false)
+      case "latex_rgb":
+        latexRGBDisabled = false
+      // case "latex_gray":
+      //   latexGrayDisabled = false
+      // case "latex_cmyk":
+      //   latexCMYKDisabled = false
+      // case "latex_hex":
+      //   latexHexDisabled = false
 			default:
 				fmt.Fprintf(os.Stderr, "Unknown argument to flag -ep: %s", pattern)
 			}

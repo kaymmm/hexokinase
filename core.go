@@ -19,6 +19,7 @@ func parseFile(in *os.File, tag string, max int) colours {
 		parseHSLA,
 		parsePalettes,
 		parseWebColours,
+    parseLatexRGB,
 	}
 
 	lnum := 0
